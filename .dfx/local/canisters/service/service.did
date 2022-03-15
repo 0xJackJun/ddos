@@ -1,0 +1,13 @@
+type canister_id = principal;
+type UserData = 
+ record {
+   canister_id: principal;
+   email: text;
+   threshold: text;
+ };
+service : {
+  create: (UserData) -> ();
+  getCount: () -> (nat);
+  getCycle: (record {canister_id: canister_id;}) -> (nat);
+  getUser: () -> (vec UserData);
+}
