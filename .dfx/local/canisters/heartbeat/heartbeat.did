@@ -1,2 +1,1 @@
-type UserData = record { threshold : text; canister_id : text; email : text };
-service : () -> { get : (nat64) -> (nat64); setCounter : (principal) -> ()}
+service : () -> { setCaller : (principal) -> (); task_one : (nat64) -> (nat64) }

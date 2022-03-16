@@ -5,15 +5,15 @@ use ic_cron::types::{Iterations, SchedulingInterval, TaskId};
 use std::collections::HashMap;
 
 //--------DATA STRUCTURE-------
-struct Counter(Principal);
+struct Caller(Principal);
 struct Owner(Principal);
 #[derive(CandidType, Deserialize, Debug)]
 pub struct Cycle {
     pub canister_id: Principal,
 }
-impl Default for Counter {
+impl Default for Caller {
     fn default() -> Self {
-        Counter(Principal::anonymous())
+        Caller(Principal::anonymous())
     }
 }
 
@@ -32,7 +32,7 @@ pub struct UserData {
 
 #[derive(Default, Deserialize)]
 pub struct CycleData {
-    pub cycle: HashMap<String, u128>,
+    pub cycle: HashMap<Principal, Nat>,
 }
 
 #[derive(CandidType, Deserialize)]
@@ -48,19 +48,19 @@ pub struct AutomaticCounter {
 }
 
 //----------MAIN LOGIC----------
-#[update(name = "setCounter")]
-#[candid_method(update, rename = "setCounter")]
-fn set_counter(counter: Principal) {
+#[update(name = "setCaller")]
+#[candid_method(update, rename = "setCaller")]
+fn set_caller(_caller: Principal) {
     let caller = ic_cdk::caller();
     let owner = storage::get::<Owner>();
-    assert_eq!(caller, owner.0);
-    let _counter = storage::get_mut::<Counter>();
-    *_counter = Counter(counter);
+    //assert_eq!(caller, owner.0);
+    let storage = storage::get_mut::<Caller>();
+    *storage = Caller(_caller);
 }
 
 #[update]
 #[candid_method(update)]
-async fn get(duration_nano: u64) -> TaskId {
+async fn task_one(duration_nano: u64) -> TaskId {
     let state = get_state();
     if state.counter_1_started {
         trap("Counter 1 already started");
@@ -99,26 +99,33 @@ async fn tick() {
 
         match kind {
             CronTaskKind::One(message) => {
-                ic_cdk::print(format!("Task One executed: {}", message.as_str()).as_str());
-                let counter = storage::get::<Counter>();
+                ic_cdk::print(format!("Task One executed: {}", message.as_str()));
+                let caller = storage::get::<Caller>();
                 let result: Result<(Vec<UserData>,), _> =
-                    api::call::call(counter.0, "getUser", ()).await;
+                    api::call::call(caller.0, "getUser", ()).await;
                 let state = get_state();
                 state.user_data = result.unwrap().0;
-                let data = &state.user_data[0];
-                let id = data.canister_id.clone();
-                let cycles = Cycle { canister_id: id };
-                let cycle: Result<(Nat,), _> =
-                    api::call::call(counter.0, "getCycle", (cycles,)).await;
-                ic_cdk::print(format!("The result is {:?}", cycle));
                 for data in state.user_data.iter() {
                     let id = data.canister_id.clone();
+                    let arg = Cycle { canister_id: id };
                     let cycle: Result<(Nat,), _> =
-                        api::call::call(counter.0, "getCycle", (&id,)).await;
-                    // if cycle.unwrap().0 - get_cycle().cycle.get(&id).unwrap() > 100{
-                    //     let diff = api::call::call(counter.0, "increace_diffculty", ()).await;
-                    // }
-                    ic_cdk::print(format!("The result is {:?}", cycle.unwrap().0));
+                        api::call::call(caller.0, "getCycle", (arg,)).await;
+                    get_cycle().cycle.entry(id).or_insert(cycle.unwrap().0);
+
+                    let arg = Cycle { canister_id: id };
+                    let cycle: Result<(Nat,), _> =
+                        api::call::call(caller.0, "getCycle", (arg,)).await;
+                    if cycle.unwrap().0 - get_cycle().cycle.get(&id).unwrap().clone()
+                        > Nat::from(10000)
+                    {
+                        let _: Result<(), _> = api::call::call(id, "improve_diffculty", ()).await;
+                    }
+
+                    let arg = Cycle { canister_id: id };
+                    let cycle: Result<(Nat,), _> =
+                        api::call::call(caller.0, "getCycle", (arg,)).await;
+
+                    ic_cdk::print(format!("The result is {:?}", cycle.as_ref().unwrap().0));
                 }
             }
         }
