@@ -118,7 +118,7 @@ async fn tick() {
                     if cycle.unwrap().0 - get_cycle().cycle.get(&id).unwrap().clone()
                         > Nat::from(10000)
                     {
-                        let _: Result<(), _> = api::call::call(id, "improve_diffculty", ()).await;
+                        let _: Result<(), _> = api::call::call(id, "increase_diffculty", ()).await;
                     }
 
                     let arg = Cycle { canister_id: id };

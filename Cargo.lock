@@ -143,7 +143,7 @@ dependencies = [
  "candid_derive",
  "codespan-reporting",
  "hex",
- "ic-types",
+ "ic-types 0.3.0",
  "lalrpop",
  "lalrpop-util",
  "leb128",
@@ -222,6 +222,16 @@ name = "crunchy"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
+
+[[package]]
+name = "ddos"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "ic-cdk",
+ "ic-cdk-macros",
+ "ic-types 0.1.5",
+]
 
 [[package]]
 name = "derivative"
@@ -386,6 +396,21 @@ dependencies = [
  "ic-cdk-macros",
  "serde",
  "union-utils",
+]
+
+[[package]]
+name = "ic-types"
+version = "0.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "94dd8ec75019bc7159efe6ca2de5392e14a8e82c02ec6dae6d1b32af5337acd1"
+dependencies = [
+ "base32",
+ "crc32fast",
+ "hex",
+ "serde",
+ "serde_bytes",
+ "sha2",
+ "thiserror",
 ]
 
 [[package]]
