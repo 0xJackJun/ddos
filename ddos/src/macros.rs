@@ -3,11 +3,12 @@ macro_rules! implement_ddos {
     () => {
         use candid::candid_method;
         use ic_cdk_macros::*;
-        //---------pow------------
+
         #[derive(Default)]
         pub struct Diffculty {
             pub difcculty: u32,
         }
+
         #[update]
         #[candid_method(update)]
         pub fn init() {
@@ -68,33 +69,3 @@ macro_rules! implement_ddos {
         }
     };
 }
-
-// #[cfg(test)]
-// mod tests {
-//     use crate as ddos;
-//     use crate::implement_ddos;
-//     use ic_cdk::*;
-//     use ic_cdk_macros::*;
-//     use rand::{thread_rng, Rng};
-//     use std::{
-//         collections::hash_map::DefaultHasher,
-//         hash::{Hash, Hasher},
-//     };
-
-//     implement_ddos!();
-//     // #[update(name = "test")]
-//     // #[candid_method(update, rename = "test")]
-//     // fn test_inspect_message(arg: u32) {
-//     //     ic_cdk::print("test succeed");
-//     // }
-//     #[test]
-//     fn test_init() {
-//         let state = init();
-//         assert_eq!(0, get_state().difcculty);
-//     }
-//     #[test]
-//     fn test_improve_diffculty() {
-//         let state = increase_diffculty();
-//         assert_eq!(1, get_state().difcculty);
-//     }
-// }
