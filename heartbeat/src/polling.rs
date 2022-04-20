@@ -1,10 +1,11 @@
 use crate::controller::{Caller, Owner};
 use crate::database::{get_cycle, get_state, UserData};
-
 use candid::{candid_method, CandidType, Deserialize, Nat, Principal};
 use ic_cdk::{api, storage, trap};
 use ic_cdk_macros::*;
 use ic_cron::types::{Iterations, SchedulingInterval, TaskId};
+
+ic_cron::implement_cron!();
 
 #[derive(CandidType, Deserialize, Debug)]
 pub struct Cycle {
@@ -35,9 +36,6 @@ async fn task_one(duration_nano: u64) -> TaskId {
 
     jobs.unwrap()
 }
-
-// --------------- RECURRENCE ------------------
-ic_cron::implement_cron!();
 
 #[init]
 #[candid_method(init)]

@@ -4,6 +4,13 @@ macro_rules! implement_ddos {
         use candid::candid_method;
         use ic_cdk_macros::*;
 
+        #[init]
+        #[candid_method(init)]
+        fn init() {
+            let caller = ic_cdk::caller();
+            let owner = storage::get_mut::<Owner>();
+            *owner = Owner(caller);
+        }
         #[derive(Default)]
         pub struct Diffculty {
             pub difcculty: u32,
@@ -11,13 +18,19 @@ macro_rules! implement_ddos {
 
         #[update]
         #[candid_method(update)]
-        pub fn init() {
+        pub fn initilize() {
+            let caller = ic_cdk::caller();
+            let owner = storage::get::<Owner>();
+            assert_eq!(caller, owner.0);
             get_state().difcculty = 0;
         }
 
         #[update]
         #[candid_method(update)]
         pub fn increase_diffculty() {
+            let caller = ic_cdk::caller();
+            let owner = storage::get::<Owner>();
+            assert_eq!(caller, owner.0);
             get_state().difcculty += 1;
             if get_state().difcculty >= 4 {
                 get_state().difcculty = 4;
