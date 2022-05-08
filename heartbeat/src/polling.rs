@@ -73,10 +73,15 @@ async fn tick() {
                     let cycle: Result<(Nat,), _> =
                         api::call::call(caller.0, "getCycle", (arg,)).await;
                     let gap = cycle.unwrap().0 - get_cycle().cycle.get(&id).unwrap().clone();
+
+                    let arg = Cycle { canister_id: id };
+                    let cycle: Result<(Nat,), _> =
+                        api::call::call(caller.0, "getCycle", (arg,)).await;
+                    get_cycle().cycle.insert(id, cycle.unwrap().0.clone());
                     if gap > Nat::from(354000000) {
                         let _: Result<(), _> = api::call::call(id, "increase_diffculty", ()).await;
                         if gap < Nat::from(70800000) {
-                            let _: Result<(), _> = api::call::call(id, "init", ()).await;
+                            let _: Result<(), _> = api::call::call(id, "initilize", ()).await;
                         }
                     }
 
