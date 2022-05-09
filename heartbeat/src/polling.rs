@@ -1,5 +1,5 @@
 use crate::controller::{Caller, Owner};
-use crate::database::{get_cycle, get_state, UserData};
+use crate::database::{get_cycle, get_ddos_list, get_state, UserData};
 use candid::{candid_method, CandidType, Deserialize, Nat, Principal};
 use ic_cdk::{api, storage, trap};
 use ic_cdk_macros::*;
@@ -80,8 +80,12 @@ async fn tick() {
                     get_cycle().cycle.insert(id, cycle.unwrap().0.clone());
                     if gap > Nat::from(354000000) {
                         let _: Result<(), _> = api::call::call(id, "increase_diffculty", ()).await;
+                        let email = data.email.clone();
+                        get_ddos_list().ddos_list.push(email);
                         if gap < Nat::from(70800000) {
                             let _: Result<(), _> = api::call::call(id, "initilize", ()).await;
+                            let email = data.email.clone();
+                            get_ddos_list().ddos_list.retain(|x| *x != email);
                         }
                     }
 
