@@ -10,6 +10,19 @@
       "type": "custom",
       "candid": "heartbeat/heartbeat.did",
       "wasm": "target/wasm32-unknown-unknown/release/heartbeat.wasm"
+    },
+    "custom_greeting_assets": {
+      "dependencies": [
+        "service"
+      ],
+      "frontend": {
+        "entrypoint": "src/custom_greeting_assets/src/index.html"
+      },
+      "source": [
+        "src/custom_greeting_assets/assets",
+        "dist/custom_greeting_assets/"
+      ],
+      "type": "assets"
     }
   },
   "defaults": {
