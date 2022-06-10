@@ -1,65 +1,68 @@
 #[macro_export]
 macro_rules! implement_ddos {
     () => {
-        use candid::candid_method;
+        use candid::{candid_method, Principal};
+        use ic_cdk::storage;
         use ic_cdk_macros::*;
+        use std::collections::hash_map::DefaultHasher;
+        use std::hash::{Hash, Hasher};
 
-        pub struct Caller(pub Principal);
-        pub struct Owner(pub Principal);
+        // pub struct Caller(pub Principal);
+        // pub struct Owner(pub Principal);
 
-        impl Default for Caller {
-            fn default() -> Self {
-                Caller(Principal::anonymous())
-            }
-        }
+        // impl Default for Caller {
+        //     fn default() -> Self {
+        //         Caller(Principal::anonymous())
+        //     }
+        // }
 
-        impl Default for Owner {
-            fn default() -> Self {
-                Owner(Principal::anonymous())
-            }
-        }
+        // impl Default for Owner {
+        //     fn default() -> Self {
+        //         Owner(Principal::anonymous())
+        //     }
+        // }
 
-        #[init]
-        #[candid_method(init)]
-        fn init() {
-            let caller = ic_cdk::caller();
-            let owner = storage::get_mut::<Owner>();
-            *owner = Owner(caller);
-        }
+        // #[init]
+        // #[candid_method(init)]
+        // fn init() {
+        //     let caller = ic_cdk::caller();
+        //     let owner = storage::get_mut::<Owner>();
+        //     *owner = Owner(caller);
+        // }
 
         #[derive(Default)]
         pub struct Diffculty {
             pub difcculty: u32,
         }
 
-        #[update(name = "setCaller")]
-        #[candid_method(update, rename = "setCaller")]
-        fn set_caller(caller: Principal) {
-            let _caller = ic_cdk::caller();
-            let _owner = storage::get::<Owner>();
-            assert_eq!(caller, owner.0);
-            let storage = storage::get_mut::<Caller>();
-            *storage = Caller(caller);
-        }
+        // #[update(name = "setCaller")]
+        // #[candid_method(update, rename = "setCaller")]
+        // fn set_caller(caller: Principal) {
+        //     let _caller = ic_cdk::caller();
+        //     let _owner = storage::get::<Owner>();
+        //     assert_eq!(_caller, _owner.0);
+        //     let storage = storage::get_mut::<Caller>();
+        //     *storage = Caller(caller);
+        // }
 
         #[update]
         #[candid_method(update)]
         pub fn initilize() {
-            let _caller = ic_cdk::caller();
-            let caller = storage::get::<Caller>();
-            assert_eq!(_caller, caller.0);
+            // let _caller = ic_cdk::caller();
+            // let caller = storage::get::<Caller>();
+            // assert_eq!(_caller, caller.0);
             get_state().difcculty = 0;
         }
 
         #[update]
         #[candid_method(update)]
         pub fn increase_diffculty() {
-            let _caller = ic_cdk::caller();
-            let caller = storage::get::<Caller>();
-            assert_eq!(_caller, caller.0);
+            // let _caller = ic_cdk::caller();
+            // let caller = storage::get::<Caller>();
+            // assert_eq!(_caller, caller.0);
             get_state().difcculty += 1;
-            if get_state().difcculty >= 4 {
-                get_state().difcculty = 4;
+            if get_state().difcculty >= 1 {
+                get_state().difcculty = 1;
             }
         }
 

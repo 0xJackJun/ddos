@@ -2,19 +2,21 @@ package main
 
 import (
 	"fmt"
-	"github.com/robfig/cron"
+	"time"
 	"watch/service"
+
+	"github.com/robfig/cron"
 )
 
 func main() {
-	// Initialize the HTTP service
-	r := service.InitHttp()
 	c := cron.New()
 
-	err := c.AddFunc("@every 1h", service.Watch)
+	err := c.AddFunc("@every 20s", service.Watch)
 	if err != nil {
 		fmt.Println(err)
 	}
 	c.Start()
-	r.Run()
+	for {
+		time.Sleep(time.Second)
+	}
 }

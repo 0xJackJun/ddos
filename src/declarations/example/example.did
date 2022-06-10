@@ -1,0 +1,1 @@
+service : { hello : (nat32) -> (text); init : (nat32) -> (); increase_diffculty : (nat32) -> ();setCaller : (principal) -> (); increase_data : (nat32) -> () }

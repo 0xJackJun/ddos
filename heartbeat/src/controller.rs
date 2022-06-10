@@ -20,7 +20,7 @@ impl Default for Owner {
 
 #[update(name = "setCaller")]
 #[candid_method(update, rename = "setCaller")]
-fn set_caller(caller: Principal) {
+pub fn set_caller(caller: Principal) {
     let _caller = ic_cdk::caller();
     let _owner = storage::get::<Owner>();
     //assert_eq!(caller, owner.0);

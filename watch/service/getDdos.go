@@ -11,7 +11,7 @@ import (
 
 func GetDdosList() []model.Ddos {
 	// local command
-	args := []string{"canister", "call", "ryjl3-tyaaa-aaaaa-aaaba-cai", "get_ddos"}
+	args := []string{"canister", "call", "rkp4c-7iaaa-aaaaa-aaaca-cai", "get_ddos"}
 	cmd := exec.Command("dfx", args...)
 
 	stdout, err := cmd.StdoutPipe()

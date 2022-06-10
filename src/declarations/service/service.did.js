@@ -7,6 +7,11 @@ export const idlFactory = ({ IDL }) => {
   const canister_id = IDL.Principal;
   return IDL.Service({
     'create' : IDL.Func([UserData], [], []),
+    'getController' : IDL.Func(
+        [IDL.Record({ 'canister_id' : canister_id })],
+        [IDL.Vec(IDL.Principal)],
+        [],
+      ),
     'getCount' : IDL.Func([], [IDL.Nat], []),
     'getCycle' : IDL.Func(
         [IDL.Record({ 'canister_id' : canister_id })],

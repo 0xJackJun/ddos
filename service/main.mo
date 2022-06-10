@@ -14,6 +14,12 @@ actor Cyclebalance{
         return cycles;
     };
 
+    public func getController(request : { canister_id : canister_id }) : async [Principal] {
+         var status: Status = await Blackhole.canister_status(request);
+         var res : [Principal] = status.settings.controllers;
+         return res;
+    };
+
     public shared(msg) func create(userData: UserData): async() {
         data.createOne(userData);
     };

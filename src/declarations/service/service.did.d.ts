@@ -1,4 +1,6 @@
 import type { Principal } from '@dfinity/principal';
+import type { ActorMethod } from '@dfinity/agent';
+
 export interface UserData {
   'threshold' : string,
   'canister_id' : Principal,
@@ -6,8 +8,12 @@ export interface UserData {
 }
 export type canister_id = Principal;
 export interface _SERVICE {
-  'create' : (arg_0: UserData) => Promise<undefined>,
-  'getCount' : () => Promise<bigint>,
-  'getCycle' : (arg_0: { 'canister_id' : canister_id }) => Promise<bigint>,
-  'getUser' : () => Promise<Array<UserData>>,
+  'create' : ActorMethod<[UserData], undefined>,
+  'getController' : ActorMethod<
+    [{ 'canister_id' : canister_id }],
+    Array<Principal>,
+  >,
+  'getCount' : ActorMethod<[], bigint>,
+  'getCycle' : ActorMethod<[{ 'canister_id' : canister_id }], bigint>,
+  'getUser' : ActorMethod<[], Array<UserData>>,
 }

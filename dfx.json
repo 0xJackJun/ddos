@@ -9,18 +9,23 @@
     "heartbeat": {
       "type": "custom",
       "candid": "heartbeat/heartbeat.did",
-      "wasm": "target/wasm32-unknown-unknown/release/heartbeat.wasm"
+      "wasm": "target/wasm32-unknown-unknown/release/opt.wasm"
     },
-    "custom_greeting_assets": {
+    "example": {
+      "type": "custom",
+      "candid": "example/example.did",
+      "wasm": "target/wasm32-unknown-unknown/release/opt_example.wasm"
+    },
+    "frondend_assets": {
       "dependencies": [
         "service"
       ],
       "frontend": {
-        "entrypoint": "src/custom_greeting_assets/src/index.html"
+        "entrypoint": "src/frondend_assets/src/index.html"
       },
       "source": [
-        "src/custom_greeting_assets/assets",
-        "dist/custom_greeting_assets/"
+        "src/frondend_assets/assets",
+        "dist/frondend_assets/"
       ],
       "type": "assets"
     }
@@ -42,5 +47,5 @@
       "type": "ephemeral"
     }
   },
-  "dfx": "0.8.4"
+  "dfx": "0.10.0"
 }

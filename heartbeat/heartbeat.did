@@ -1,1 +1,1 @@
-service : () -> { setCaller : (principal) -> (); task_one : (nat64) -> (nat64); addDdos : (text) -> (); get_ddos : () -> (vec text) }
+service : () -> { setCaller : (principal) -> (); task_one : (nat64) -> (nat64); addDdos : (text) -> (); get_ddos : () -> (vec text); increase_data : () -> ();decrease_data : () -> () }

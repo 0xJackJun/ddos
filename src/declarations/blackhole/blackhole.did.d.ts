@@ -1,4 +1,6 @@
 import type { Principal } from '@dfinity/principal';
+import type { ActorMethod } from '@dfinity/agent';
+
 export type canister_id = Principal;
 export interface canister_status {
   'status' : { 'stopped' : null } |
@@ -16,7 +18,8 @@ export interface definite_canister_settings {
   'compute_allocation' : bigint,
 }
 export interface _SERVICE {
-  'canister_status' : (arg_0: { 'canister_id' : canister_id }) => Promise<
-      canister_status
-    >,
+  'canister_status' : ActorMethod<
+    [{ 'canister_id' : canister_id }],
+    canister_status,
+  >,
 }

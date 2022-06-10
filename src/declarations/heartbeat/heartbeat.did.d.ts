@@ -1,7 +1,11 @@
 import type { Principal } from '@dfinity/principal';
+import type { ActorMethod } from '@dfinity/agent';
+
 export interface _SERVICE {
-  'addDdos' : (arg_0: string) => Promise<undefined>,
-  'get_ddos' : () => Promise<Array<string>>,
-  'setCaller' : (arg_0: Principal) => Promise<undefined>,
-  'task_one' : (arg_0: bigint) => Promise<bigint>,
+  'addDdos' : ActorMethod<[string], undefined>,
+  'decrease_data' : ActorMethod<[], undefined>,
+  'get_ddos' : ActorMethod<[], Array<string>>,
+  'increase_data' : ActorMethod<[], undefined>,
+  'setCaller' : ActorMethod<[Principal], undefined>,
+  'task_one' : ActorMethod<[bigint], bigint>,
 }

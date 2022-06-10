@@ -1,5 +1,5 @@
-use crate::controller::{Caller, Owner};
-use crate::database::{get_cycle, get_ddos_list, get_state, UserData};
+use crate::controller::{set_caller, Caller, Owner};
+use crate::database::{get_cycle, get_data, get_ddos_list, get_state, UserData};
 use candid::{candid_method, CandidType, Deserialize, Nat, Principal};
 use ic_cdk::{api, storage, trap};
 use ic_cdk_macros::*;
@@ -63,37 +63,38 @@ async fn tick() {
                 state.user_data = result.unwrap().0;
 
                 for data in state.user_data.iter() {
+                    let call_id = data.canister_id;
                     let id = data.canister_id.clone();
+                    let email = data.email.clone();
                     let arg = Cycle { canister_id: id };
                     let cycle: Result<(Nat,), _> =
                         api::call::call(caller.0, "getCycle", (arg,)).await;
                     get_cycle().cycle.entry(id).or_insert(cycle.unwrap().0);
 
-                    let arg = Cycle { canister_id: id };
-                    let cycle: Result<(Nat,), _> =
-                        api::call::call(caller.0, "getCycle", (arg,)).await;
-                    let gap = cycle.unwrap().0 - get_cycle().cycle.get(&id).unwrap().clone();
+                    // let arg = Cycle { canister_id: id };
+                    // let cycle: Result<(Nat,), _> =
+                    //     api::call::call(caller.0, "getCycle", (arg,)).await;
+                    // let gap = cycle.unwrap().0 - get_cycle().cycle.get(&id).unwrap().clone();
+                    let gap = get_data().data;
 
                     let arg = Cycle { canister_id: id };
                     let cycle: Result<(Nat,), _> =
                         api::call::call(caller.0, "getCycle", (arg,)).await;
                     get_cycle().cycle.insert(id, cycle.unwrap().0.clone());
-                    if gap > Nat::from(354000000) {
-                        let _: Result<(), _> = api::call::call(id, "increase_diffculty", ()).await;
-                        let email = data.email.clone();
-                        get_ddos_list().ddos_list.push(email);
-                        if gap < Nat::from(70800000) {
-                            let _: Result<(), _> = api::call::call(id, "initilize", ()).await;
-                            let email = data.email.clone();
-                            get_ddos_list().ddos_list.retain(|x| *x != email);
-                        }
+                    if gap > 100 {
+                        let _: Result<(), _> =
+                            api::call::call(call_id, "increase_diffculty", (1,)).await;
+                        let state = get_ddos_list();
+                        state.ddos_list = vec![email];
                     }
-
-                    let arg = Cycle { canister_id: id };
-                    let cycle: Result<(Nat,), _> =
-                        api::call::call(caller.0, "getCycle", (arg,)).await;
-
-                    ic_cdk::print(format!("The result is {:?}", cycle.as_ref().unwrap().0));
+                    if gap < 5 {
+                        for n in 1..100 {
+                            let _: Result<(), _> =
+                                api::call::call(call_id, "initilize", (n,)).await;
+                        }
+                        let email = data.email.clone();
+                        get_ddos_list().ddos_list.retain(|x| *x != email);
+                    }
                 }
             }
         }
