@@ -49775,8 +49775,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const Info = ({}) => {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "left" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" }, "Based on the reverse Gas model of IC platform, we consider Ddos attack as a headache.    The purpose of this product is to help developers defend against DDos attacks and to limit traffic by sending messages to developers who register for the service when a Ddos attack occurs.")));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "left", width: "100%" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center", width: "50%" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" }, "Based on the reverse Gas model of IC platform, we consider Ddos attack as a headache.    The purpose of this product is to help developers defend against DDos attacks and to limit traffic by sending messages to developers who register for the service when a Ddos attack occurs."))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Info);
 
@@ -49801,11 +49802,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import Button from 'react-bootstrap/Button';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 const Picker = (actor, principalId) => {
     const [canisterId, setCanisterId] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     const [email, setEmail] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     const [threshold, setThreshold] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     const [message, setMessage] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
+    const [clickthreshold, setClickthreshold] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
+    const [clickthreshold2, setClickthreshold2] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
+    const [clickthreshold3, setClickthreshold3] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     async function createUser() {
         try {
             console.log(canisterId);
@@ -49838,15 +49844,36 @@ const Picker = (actor, principalId) => {
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: 'leaderboard-container', style: { "fontSize": "30px" } },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "6", color: "black" }, "Please submit your information to subscribe our service.")),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { style: { margin: "30px" }, align: "center" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" }, "threshold:  "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { id: "threshold", value: threshold, onChange: (ev) => setThreshold(ev.target.value) }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" }, "     canister id:  "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { id: "canister_id", value: canisterId, onChange: (ev) => setCanisterId(_dfinity_principal__WEBPACK_IMPORTED_MODULE_1__.Principal.fromText(ev.target.value)) }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" }, "     email:  "),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { id: "email", value: email, onChange: (ev) => setEmail(ev.target.value) }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: createUser }, "Submit!")),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" }, "Please submit your information to subscribe our service.")),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "threshold:")),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "cycles under threshold, get alarmed", id: "threshold", value: threshold, onChange: (ev) => setThreshold(ev.target.value), onClick: () => setClickthreshold(true), onBlur: () => setClickthreshold(false), size: "28" })),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold ?
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "threshold:"))
+                    : null)),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "email:")),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "subscribe email", id: "email", value: email, onChange: (ev) => setEmail(ev.target.value), onClick: () => setClickthreshold2(true), onBlur: () => setClickthreshold2(false), size: "28" })),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold2 ?
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "threshold:"))
+                    : null)),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "canister id:")),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
+                    " ",
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "canister id", id: "canister_id", value: canisterId, onChange: (ev) => setCanisterId(_dfinity_principal__WEBPACK_IMPORTED_MODULE_1__.Principal.fromText(ev.target.value)), onClick: () => setClickthreshold3(true), onBlur: () => setClickthreshold3(false), size: "28" })),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold3 ?
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "left" }, "if cycle balance under threshold, you will get alarmed."))
+                    : null))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {} },
