@@ -41,15 +41,17 @@
         "last 2 edge version"
     ],
     "dependencies": {
+        "@psychedelic/plug-connect": "^0.1.3",
         "babel-preset-es2015": "^6.24.1",
+        "bootstrap": "^5.1.3",
         "clsx": "^1.1.1",
         "css-loader": "^6.2.0",
         "file-loader": "^6.2.0",
         "react": "^18.1.0",
+        "react-bootstrap": "^2.4.0",
         "react-dom": "^18.1.0",
+        "react-jinke-music-player": "^4.24.1",
         "react-router-dom": "^5.2.0",
-        "style-loader": "^3.2.1",
-        "@psychedelic/plug-connect": "^0.1.3",
-        "react-jinke-music-player": "^4.24.1"
+        "style-loader": "^3.2.1"
     }
 }
