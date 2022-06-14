@@ -1,8 +1,7 @@
 import React from 'react';
 import { Principal } from "@dfinity/principal";
 import { service } from "../../../../declarations/service";
-// import Button from 'react-bootstrap/Button';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Popup from '../../components/Popup';
 
 const Picker = (actor, principalId) => {
   const [canisterId, setCanisterId] = React.useState('');
@@ -12,6 +11,8 @@ const Picker = (actor, principalId) => {
   const [clickthreshold, setClickthreshold] = React.useState('');
   const [clickthreshold2, setClickthreshold2] = React.useState('');
   const [clickthreshold3, setClickthreshold3] = React.useState('');
+  const [buttonPopup, setButtonPopup] = React.useState(false);
+
   async function createUser() {
     try {
       console.log(canisterId);
@@ -24,9 +25,7 @@ const Picker = (actor, principalId) => {
         }
       }
       if (temp === controller.length) {
-        alert(" : succeed");
-        setMessage(" : Failed, because you are not a controller of this canister");
-        throw 'You are not a controller';
+        throw (new Error('You are not a controller'));
       }
       const params = {
         to: 'ezw55-al2r4-u5pm6-jaew5-43qve-46acg-ypjdh-caeh4-3iv3o-eh5qw-kae',
@@ -36,12 +35,17 @@ const Picker = (actor, principalId) => {
       const result = await window.ic.plug.requestTransfer(params);
       console.log(result);
       const greeting = await service.create({ "threshold": threshold, canister_id: canisterId, "email": email });
-      setMessage(" : succeed");
-      alert(" : succeed");
+      setMessage("succeed");
+      setButtonPopup(true);
     } catch (e) {
-      console.log(e)
-      alert(" : succeed");
-      setMessage(" : Failed, you have to send ICP to subscribe our service");
+      if (e.message == 'You are not a controller') {
+        setMessage("failed, you are not the controller of this canister");
+        setButtonPopup(true);
+      } else {
+        setMessage("failed, please send ICP to subscribe our service");
+        setButtonPopup(true);
+      }
+      console.log(e.message);
     }
   }
 
@@ -53,7 +57,7 @@ const Picker = (actor, principalId) => {
       <table>
         <tr>
           <td width="100px"><input
-            placeholder="threshold"
+            placeholder="cycle threshold"
             id="threshold"
             value={threshold}
             onChange={(ev) => setThreshold(ev.target.value)}
@@ -65,7 +69,7 @@ const Picker = (actor, principalId) => {
         <tr>
           {
             clickthreshold ?
-              <font size="4" color="grey" align="left">cycles under threshold, you will get alarmed</font>
+              <font size="4" color="grey" align="left">an alert will be mailed to you when the threshold is reached</font>
               : null
           }
         </tr>
@@ -99,18 +103,18 @@ const Picker = (actor, principalId) => {
         <tr>
           {
             clickthreshold3 ?
-              <font size="4" color="grey" align="left">canister id you want to inspect.</font>
+              <font size="4" color="grey" align="left">canister id you want to inspect</font>
               : null
           }
         </tr>
       </table>
       <div style={{ margin: "30px" }} align="center">
-        <button onClick={createUser} style={{ backgroundColor: "#grey" }}>Submit!</button>
-      </div>
-      <div align="center">
-        <font face="verdana" size="5" color="black">
-          <span style={{}}>Result {message}</span>
+        <button onClick={() =>{createUser();}} style={{ backgroundColor: "#grey" }}>Submit!</button>
+        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <font face="verdana" size="4" color="black">
+          <span style={{}}>{message}</span>
         </font>
+        </Popup>
       </div>
     </div >
   );

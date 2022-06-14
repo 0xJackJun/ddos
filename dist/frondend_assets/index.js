@@ -60,6 +60,33 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: Iceland;\
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/frondend_assets/src/components/Popup.css":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/frondend_assets/src/components/Popup.css ***!
+  \********************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".popup{\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100vh;\n    background-color: rgb(0, 0, 0,0.2);\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n.popup-inner{\n    position: relative;\n    padding: 32px;\n    width: 100%;\n    max-width: 640px;\n    background-color: rgb(176, 194, 211);\n}\n\n.popup-inner .close-btn {\n    position:absolute;\n    top: 16px;\n    right: 16px;\n    \n}", "",{"version":3,"sources":["webpack://./src/frondend_assets/src/components/Popup.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,WAAW;IACX,aAAa;IACb,kCAAkC;;IAElC,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,aAAa;IACb,WAAW;IACX,gBAAgB;IAChB,oCAAoC;AACxC;;AAEA;IACI,iBAAiB;IACjB,SAAS;IACT,WAAW;;AAEf","sourcesContent":[".popup{\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100vh;\n    background-color: rgb(0, 0, 0,0.2);\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n.popup-inner{\n    position: relative;\n    padding: 32px;\n    width: 100%;\n    max-width: 640px;\n    background-color: rgb(176, 194, 211);\n}\n\n.popup-inner .close-btn {\n    position:absolute;\n    top: 16px;\n    right: 16px;\n    \n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./src/frondend_assets/assets/badge.css":
 /*!**********************************************!*\
   !*** ./src/frondend_assets/assets/badge.css ***!
@@ -166,6 +193,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/frondend_assets/src/components/Popup.css":
+/*!******************************************************!*\
+  !*** ./src/frondend_assets/src/components/Popup.css ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Popup_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js!./Popup.css */ "./node_modules/css-loader/dist/cjs.js!./src/frondend_assets/src/components/Popup.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_Popup_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Popup_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_Popup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_Popup_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -49675,6 +49757,33 @@ ConnectionBadge.propTypes = {
 
 /***/ }),
 
+/***/ "./src/frondend_assets/src/components/Popup.js":
+/*!*****************************************************!*\
+  !*** ./src/frondend_assets/src/components/Popup.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Popup_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Popup.css */ "./src/frondend_assets/src/components/Popup.css");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Popup(props) {
+    return (props.trigger) ? (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { className: 'popup' },
+        react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { className: 'popup-inner' },
+            react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", { className: 'close-btn', onClick: () => { props.setTrigger(false); } }, "close"),
+            props.children))) : "";
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popup);
+
+
+/***/ }),
+
 /***/ "./src/frondend_assets/src/components/index.js":
 /*!*****************************************************!*\
   !*** ./src/frondend_assets/src/components/index.js ***!
@@ -49799,11 +49908,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _dfinity_principal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @dfinity/principal */ "./node_modules/@dfinity/principal/lib/esm/index.js");
 /* harmony import */ var _declarations_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../declarations/service */ "./src/declarations/service/index.js");
+/* harmony import */ var _components_Popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Popup */ "./src/frondend_assets/src/components/Popup.js");
 
 
 
-// import Button from 'react-bootstrap/Button';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 const Picker = (actor, principalId) => {
     const [canisterId, setCanisterId] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     const [email, setEmail] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
@@ -49812,6 +49921,7 @@ const Picker = (actor, principalId) => {
     const [clickthreshold, setClickthreshold] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     const [clickthreshold2, setClickthreshold2] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
     const [clickthreshold3, setClickthreshold3] = react__WEBPACK_IMPORTED_MODULE_0___default().useState('');
+    const [buttonPopup, setButtonPopup] = react__WEBPACK_IMPORTED_MODULE_0___default().useState(false);
     async function createUser() {
         try {
             console.log(canisterId);
@@ -49824,8 +49934,7 @@ const Picker = (actor, principalId) => {
                 }
             }
             if (temp === controller.length) {
-                setMessage(" : Failed, because you are not a controller of this canister");
-                throw 'You are not a controller';
+                throw (new Error('You are not a controller'));
             }
             const params = {
                 to: 'ezw55-al2r4-u5pm6-jaew5-43qve-46acg-ypjdh-caeh4-3iv3o-eh5qw-kae',
@@ -49835,44 +49944,49 @@ const Picker = (actor, principalId) => {
             const result = await window.ic.plug.requestTransfer(params);
             console.log(result);
             const greeting = await _declarations_service__WEBPACK_IMPORTED_MODULE_2__.service.create({ "threshold": threshold, canister_id: canisterId, "email": email });
-            setMessage(" : succeed");
+            setMessage("succeed");
+            setButtonPopup(true);
         }
         catch (e) {
-            console.log(e);
-            setMessage(" : Failed, you have to send ICP to subscribe our service");
+            if (e.message == 'You are not a controller') {
+                setMessage("failed, you are not the controller of this canister");
+                setButtonPopup(true);
+            }
+            else {
+                setMessage("failed, please send ICP to subscribe our service");
+                setButtonPopup(true);
+            }
+            console.log(e.message);
         }
     }
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: 'leaderboard-container', style: { "fontSize": "30px" } },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" }, "Please submit your information to subscribe our service.")),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "left" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" }, "Register")),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "threshold", id: "threshold", value: threshold, onChange: (ev) => setThreshold(ev.target.value), onClick: () => setClickthreshold(true), onBlur: () => setClickthreshold(false), size: "28" })),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold ?
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "right" }, "cycles under threshold, get alarmed"))
-                    : null)),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", { width: "100px" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "cycle threshold", id: "threshold", value: threshold, onChange: (ev) => setThreshold(ev.target.value), onClick: () => setClickthreshold(true), onBlur: () => setClickthreshold(false), size: "28" }))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, clickthreshold ?
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "left" }, "an alert will be mailed to you when the threshold is reached")
+                : null),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "email", id: "email", value: email, onChange: (ev) => setEmail(ev.target.value), onClick: () => setClickthreshold2(true), onBlur: () => setClickthreshold2(false), size: "28" })),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold2 ?
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "right" }, "subscribe email"))
-                    : null)),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "email", id: "email", value: email, onChange: (ev) => setEmail(ev.target.value), onClick: () => setClickthreshold2(true), onBlur: () => setClickthreshold2(false), size: "28" }))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, clickthreshold2 ?
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "right" }, "subscribe email")
+                : null),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
                     " ",
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "canister id", id: "canister_id", value: canisterId, onChange: (ev) => setCanisterId(_dfinity_principal__WEBPACK_IMPORTED_MODULE_1__.Principal.fromText(ev.target.value)), onClick: () => setClickthreshold3(true), onBlur: () => setClickthreshold3(false), size: "28" })),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold3 ?
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "left" }, "canister id you want to inspect."))
-                    : null))),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {} },
-                    "Result ",
-                    message)))));
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "canister id", id: "canister_id", value: canisterId, onChange: (ev) => setCanisterId(_dfinity_principal__WEBPACK_IMPORTED_MODULE_1__.Principal.fromText(ev.target.value)), onClick: () => setClickthreshold3(true), onBlur: () => setClickthreshold3(false), size: "28" }))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null, clickthreshold3 ?
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "left" }, "canister id you want to inspect")
+                : null)),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { style: { margin: "30px" }, align: "center" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: () => { createUser(); }, style: { backgroundColor: "#grey" } }, "Submit!"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], { trigger: buttonPopup, setTrigger: setButtonPopup },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {} }, message))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Picker);
 
