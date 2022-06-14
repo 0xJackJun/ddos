@@ -24,6 +24,7 @@ const Picker = (actor, principalId) => {
         }
       }
       if (temp === controller.length) {
+        alert(" : succeed");
         setMessage(" : Failed, because you are not a controller of this canister");
         throw 'You are not a controller';
       }
@@ -36,107 +37,76 @@ const Picker = (actor, principalId) => {
       console.log(result);
       const greeting = await service.create({ "threshold": threshold, canister_id: canisterId, "email": email });
       setMessage(" : succeed");
+      alert(" : succeed");
     } catch (e) {
       console.log(e)
+      alert(" : succeed");
       setMessage(" : Failed, you have to send ICP to subscribe our service");
     }
   }
 
   return (
     <div className='leaderboard-container' style={{ "fontSize": "30px" }}>
-      <div align="center">
-        <font face="verdana" size="4" color="black">Please submit your information to subscribe our service.</font>
+      <div align="left">
+        <font face="verdana" size="4" color="black">Register</font>
       </div>
       <table>
         <tr>
-          <td><input 
-          placeholder="threshold"
-          id="threshold"
-          value={threshold}
-          onChange={(ev) => setThreshold(ev.target.value)}
-          onClick={() => setClickthreshold(true)}
-          onBlur={() => setClickthreshold(false)}
-          size="28"
-        ></input></td>
-        <td>
+          <td width="100px"><input
+            placeholder="threshold"
+            id="threshold"
+            value={threshold}
+            onChange={(ev) => setThreshold(ev.target.value)}
+            onClick={() => setClickthreshold(true)}
+            onBlur={() => setClickthreshold(false)}
+            size="28"
+          ></input></td>
+        </tr>
+        <tr>
           {
-            clickthreshold?
-            <div>
-               <font size="4" color="grey" align="right">cycles under threshold, get alarmed</font>
-            </div>
-            : null
+            clickthreshold ?
+              <font size="4" color="grey" align="left">cycles under threshold, you will get alarmed</font>
+              : null
           }
-        </td>
         </tr>
         <tr>
           <td><input placeholder="email"
-          id="email"
-          value={email}
-          onChange={(ev) => setEmail(ev.target.value)}
-          onClick={() => setClickthreshold2(true)}
-          onBlur={() => setClickthreshold2(false)}
-          size="28"
-        ></input></td>
-        <td>
+            id="email"
+            value={email}
+            onChange={(ev) => setEmail(ev.target.value)}
+            onClick={() => setClickthreshold2(true)}
+            onBlur={() => setClickthreshold2(false)}
+            size="28"
+          ></input></td>
+        </tr>
+        <tr>
           {
-            clickthreshold2?
-            <div>
-               <font size="4" color="grey" align="right">subscribe email</font>
-            </div>
-            : null
+            clickthreshold2 ?
+              <font size="4" color="grey" align="right">subscribe email</font>
+              : null
           }
-        </td>
         </tr>
         <tr>
           <td> <input placeholder="canister id"
-          id="canister_id"
-          value={canisterId}
-          onChange={(ev) => setCanisterId(Principal.fromText(ev.target.value))}
-          onClick={() => setClickthreshold3(true)}
-          onBlur={() => setClickthreshold3(false)}
-          size="28"
-        ></input></td>
-        <td>
+            id="canister_id"
+            value={canisterId}
+            onChange={(ev) => setCanisterId(Principal.fromText(ev.target.value))}
+            onClick={() => setClickthreshold3(true)}
+            onBlur={() => setClickthreshold3(false)}
+            size="28"
+          ></input></td>
+        </tr>
+        <tr>
           {
-            clickthreshold3?
-            <div>
-               <font size="4" color="grey" align="left">canister id you want to inspect.</font>
-            </div>
-            : null
+            clickthreshold3 ?
+              <font size="4" color="grey" align="left">canister id you want to inspect.</font>
+              : null
           }
-        </td>
         </tr>
       </table>
-      {/* <div style={{ margin: "20px" }} align="center">
-        <font face="verdana" size="4" color="black">threshold:  </font>
-        <input placeholder="cycles under threshold, get alarmed"
-          id="threshold"
-          value={threshold}
-          onChange={(ev) => setThreshold(ev.target.value)}
-          size="28"
-        ></input>
-        </div>
-        <div style={{ margin: "20px" }} align="center">
-        <font face="verdana" size="4" color="black">   canister id:  </font>
-        <input placeholder="canister id"
-          id="canister_id"
-          value={canisterId}
-          onChange={(ev) => setCanisterId(Principal.fromText(ev.target.value))}
-          size="28"
-        ></input>
-        </div>
-        <div style={{ margin: "20px" }} align="center">
-        <font face="verdana" size="4" color="black">     email:  </font>
-        <input placeholder="subscribe email"
-          id="email"
-          value={email}
-          onChange={(ev) => setEmail(ev.target.value)}
-          size="28"
-        ></input>
-        </div>
-        <div style={{ margin: "30px" }} align="center">
-        <button onClick={createUser} style={{backgroundColor:"#grey"}}>Submit!</button>
-      </div> */}
+      <div style={{ margin: "30px" }} align="center">
+        <button onClick={createUser} style={{ backgroundColor: "#grey" }}>Submit!</button>
+      </div>
       <div align="center">
         <font face="verdana" size="5" color="black">
           <span style={{}}>Result {message}</span>

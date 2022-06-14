@@ -49848,31 +49848,25 @@ const Picker = (actor, principalId) => {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "threshold:")),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "cycles under threshold, get alarmed", id: "threshold", value: threshold, onChange: (ev) => setThreshold(ev.target.value), onClick: () => setClickthreshold(true), onBlur: () => setClickthreshold(false), size: "28" })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "threshold", id: "threshold", value: threshold, onChange: (ev) => setThreshold(ev.target.value), onClick: () => setClickthreshold(true), onBlur: () => setClickthreshold(false), size: "28" })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold ?
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "threshold:"))
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "right" }, "cycles under threshold, get alarmed"))
                     : null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "email:")),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "subscribe email", id: "email", value: email, onChange: (ev) => setEmail(ev.target.value), onClick: () => setClickthreshold2(true), onBlur: () => setClickthreshold2(false), size: "28" })),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "email", id: "email", value: email, onChange: (ev) => setEmail(ev.target.value), onClick: () => setClickthreshold2(true), onBlur: () => setClickthreshold2(false), size: "28" })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold2 ?
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "threshold:"))
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "right" }, "subscribe email"))
                     : null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "right" }, "canister id:")),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null,
                     " ",
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", { placeholder: "canister id", id: "canister_id", value: canisterId, onChange: (ev) => setCanisterId(_dfinity_principal__WEBPACK_IMPORTED_MODULE_1__.Principal.fromText(ev.target.value)), onClick: () => setClickthreshold3(true), onBlur: () => setClickthreshold3(false), size: "28" })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("td", null, clickthreshold3 ?
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "5", color: "black", align: "left" }, "if cycle balance under threshold, you will get alarmed."))
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "left" }, "canister id you want to inspect."))
                     : null))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" },
