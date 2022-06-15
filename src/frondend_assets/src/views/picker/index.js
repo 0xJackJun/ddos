@@ -109,7 +109,7 @@ const Picker = (actor, principalId) => {
         </tr>
       </table>
       <div style={{ margin: "30px" }} align="center">
-        <button onClick={() =>{createUser();}} style={{ backgroundColor: "#grey" }}>Submit!</button>
+        <button onClick={() =>{createUser();}} style={{ backgroundColor: "#grey" }}>Subscribe for one month</button>
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
         <font face="verdana" size="4" color="black">
           <span style={{}}>{message}</span>

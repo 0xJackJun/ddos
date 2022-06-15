@@ -49884,9 +49884,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const Info = ({}) => {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "left", width: "100%" },
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { align: "center", width: "50%" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" }, "Based on the reverse Gas model of IC platform, we consider Ddos attack as a headache.    The purpose of this product is to help developers defend against DDos attacks and to limit traffic by sending messages to developers who register for the service when a Ddos attack occurs."))));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("table", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" }, "Our service help you inspect your canister health.")),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" }, "Once your canister being ddos attack or your canister cycle is under threshold, you will get alerted by email.")),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("tr", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "5", color: "black" }, "You can read our github to get instructions on how to be compatible to our service."))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Info);
 
@@ -49983,7 +49987,7 @@ const Picker = (actor, principalId) => {
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { size: "4", color: "grey", align: "left" }, "canister id you want to inspect")
                 : null)),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { style: { margin: "30px" }, align: "center" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: () => { createUser(); }, style: { backgroundColor: "#grey" } }, "Submit!"),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { onClick: () => { createUser(); }, style: { backgroundColor: "#grey" } }, "Subscribe for one month"),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Popup__WEBPACK_IMPORTED_MODULE_3__["default"], { trigger: buttonPopup, setTrigger: setButtonPopup },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("font", { face: "verdana", size: "4", color: "black" },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { style: {} }, message))))));

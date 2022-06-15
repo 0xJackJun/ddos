@@ -60,10 +60,10 @@ macro_rules! implement_ddos {
             // let _caller = ic_cdk::caller();
             // let caller = storage::get::<Caller>();
             // assert_eq!(_caller, caller.0);
-            get_state().difcculty += 1;
-            if get_state().difcculty >= 1 {
-                get_state().difcculty = 1;
-            }
+            get_state().difcculty = 3;
+            // if get_state().difcculty <=3 {
+            //     get_state().difcculty += 1;
+            // }
         }
 
         static mut STATE: Option<Diffculty> = None;
