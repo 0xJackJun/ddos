@@ -2,7 +2,7 @@
 
 start1=$(date +%s)
 success=0
-for((i=1;i<10000;i++));
+for((i=1;i<4000;i++));
 do
     start=$(date +%s)
     a="(${i}:nat32)"
